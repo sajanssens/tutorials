@@ -17,8 +17,8 @@ public class RelatedAuthorCounter {
         }
     }
 
-    public RelatedAuthorCounter combine(RelatedAuthorCounter RelatedAuthorCounter) {
-        return new RelatedAuthorCounter(counter + RelatedAuthorCounter.counter, RelatedAuthorCounter.isRelated);
+    public RelatedAuthorCounter combine(RelatedAuthorCounter relatedAuthorCounter) {
+        return new RelatedAuthorCounter(counter + relatedAuthorCounter.counter, relatedAuthorCounter.isRelated);
     }
 
     public int getCounter() {

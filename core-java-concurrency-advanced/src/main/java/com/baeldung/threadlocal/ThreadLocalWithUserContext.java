@@ -5,8 +5,9 @@ import org.slf4j.LoggerFactory;
 
 public class ThreadLocalWithUserContext implements Runnable {
     private static final Logger LOG = LoggerFactory.getLogger(ThreadLocalWithUserContext.class);
-    
+
     private static final ThreadLocal<Context> userContext = new ThreadLocal<>();
+    private static final ThreadLocal<Integer> integers = new ThreadLocal<>();
     private final Integer userId;
     private UserRepository userRepository = new UserRepository();
 
@@ -14,11 +15,12 @@ public class ThreadLocalWithUserContext implements Runnable {
         this.userId = userId;
     }
 
-
     @Override
     public void run() {
         String userName = userRepository.getUserNameForUserId(userId);
         userContext.set(new Context(userName));
+        integers.set(userId);
         LOG.debug("thread context for given userId: " + userId + " is: " + userContext.get());
+        LOG.debug("thread integers for given userId: " + userId + " is: " + integers.get());
     }
 }

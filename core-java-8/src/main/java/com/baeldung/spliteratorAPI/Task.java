@@ -14,14 +14,10 @@ public class Task implements Callable<String> {
     @Override
     public String call() {
         int current = 0;
-        while (spliterator.tryAdvance(article -> {
-            article.setName(article.getName()
-                .concat(SUFFIX));
-        })) {
+        while (spliterator.tryAdvance(article -> article.setName(article.getName().concat(SUFFIX)))) {
             current++;
         }
-        ;
-        return Thread.currentThread()
-            .getName() + ":" + current;
+
+        return Thread.currentThread().getName() + ":" + current;
     }
 }

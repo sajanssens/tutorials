@@ -16,7 +16,7 @@ public class ThreadLocalIntegrationTest {
         new Thread(firstUser).start();
         new Thread(secondUser).start();
 
-        Thread.sleep(3000);
+//        Thread.sleep(3000);
         //then
         assertEquals(SharedMapWithUserContext.userContextPerUserId.size(), 2);
     }
@@ -30,6 +30,7 @@ public class ThreadLocalIntegrationTest {
         new Thread(secondUser).start();
 
         Thread.sleep(3000);
+//        System.out.println(ThreadLocalWithUserContext.userContext.get().toString());
     }
 
 }

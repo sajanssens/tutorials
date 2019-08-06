@@ -37,7 +37,7 @@ public class YahooQuoteManagerImpl implements QuoteManager {
         }
         String queryString = String.format("%s=%s", "symbols", value);
         String response = doGetRequest(queryString);
-        System.out.println(response);
+        // System.out.println(response);
         return map(response);
     }
 
@@ -49,7 +49,7 @@ public class YahooQuoteManagerImpl implements QuoteManager {
     String doGetRequest(String queryString) {
         String fullUrl = URL_PROVIDER + "?" + queryString;
 
-        System.out.println(fullUrl);
+        // System.out.println(fullUrl);
         Request request = new Request.Builder()
                 .url(fullUrl)
                 .build();

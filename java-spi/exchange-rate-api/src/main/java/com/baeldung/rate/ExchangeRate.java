@@ -10,7 +10,7 @@ import java.util.ServiceLoader;
 
 public final class ExchangeRate {
 
-    private static final String DEFAULT_PROVIDER = "com.baeldung.rate.spi.YahooFinanceExchangeRateProvider";
+    private static final String DEFAULT_PROVIDER = "com.baeldung.rate.impl.YahooFinanceExchangeRateProvider";
 
     //All providers
     public static List<ExchangeRateProvider> providers() {

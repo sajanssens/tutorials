@@ -17,6 +17,14 @@
             <artifactId>exchange-rate-api</artifactId>
             <version>${exchange-rate-api.version}</version>
         </dependency>
+        <!--uncomment this dependency to provide an implementation-->
+        <!--
+                <dependency>
+                    <groupId>com.baeldung</groupId>
+                    <artifactId>exchange-rate-impl</artifactId>
+                    <version>${exchange-rate-api.version}</version>
+                </dependency>
+        -->
     </dependencies>
 
     <properties>
